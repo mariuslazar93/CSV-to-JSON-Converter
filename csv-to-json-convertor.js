@@ -12,7 +12,7 @@ csv()
         customerArr.push(obj);
     })
     .on('done', () => {
-        const jsonContent = JSON.stringify(customerArr);
+        const jsonContent = JSON.stringify(customerArr, null, '\t');
         fs.writeFile(pathToJson, jsonContent, (err) => {
             if (err) {
                 console.log('Error writing JSON file: ', err);
